@@ -1,0 +1,15 @@
+<div class="container">
+  <h1 class="mx-auto my-5">Editing physician</h1>
+  <hr>
+  <%= render "form", physician: @physician %>
+  <br>
+  
+  <div class="btn-group my-5">
+    <button class="btn-warning">
+    <%= link_to "More", @physician %>
+    </button>
+    <button class="btn">
+    <%= link_to "Back", physicians_path %>
+    </button>
+  </div>
+  </div>>

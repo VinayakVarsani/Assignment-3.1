@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  physician_id: 1
+  name: MyString
+  email: MyString
+  unique_id: 1
+
+two:
+  physician_id: 1
+  name: MyString
+  email: MyString
+  unique_id: 1

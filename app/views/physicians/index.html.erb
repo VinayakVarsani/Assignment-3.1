@@ -1,0 +1,47 @@
+<div class="container">
+<p style="color: green"><%= notice %></p>
+
+<h1 class="my-5">Physicians</h1>
+<hr>
+<table class=".d-flex table-striped table-bordered w-100 table-sm px-5 my-5 ">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">E-Mail</th>
+      <th scope="col">unique_id</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @physicians.each do |physician| %>
+      <tr>
+        <td>
+          <%=physician.name%>
+        </td>
+        <td>
+          <%=physician.email%>
+        </td>
+        <td>
+          <%=physician.unique_id%>
+        </td>
+        <td>
+          <%= link_to "Info" , physician %>
+        </td>
+      </tr>
+      <%end%>
+  </tbody>
+  </table>
+<hr>
+</div>
+</div>
+<div class="btn-group">
+<button class="btn">
+  <%= link_to "New physician", new_physician_path %>
+</button>
+<button class="btn" >
+  <%= link_to "New Patient", new_patient_path %>
+</button>
+<button class="btn">
+  <%= link_to "New appointment", new_appointment_path %>
+</button>
+</div>

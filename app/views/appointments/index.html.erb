@@ -1,0 +1,39 @@
+<div class="container">
+<p style="color: green"><%= notice %></p>
+
+<h1 class="my-5">Appointments</h1>
+<hr>
+<table class=".d-flex table-striped table-bordered w-100 table-sm px-5 my-5 ">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">E-Mail</th>
+      <th scope="col">unique_id</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @appointments.each do |appointment| %>
+      <tr>
+        <td>
+          <%=appointment.name%>
+        </td>
+        <td>
+          <%=appointment.email%>
+        </td>
+        <td>
+          <%=appointment.unique_id%>
+        </td>
+        <td>
+          <%= link_to "Info" , appointment %>
+        </td>
+      </tr>
+      <%end%>
+  </tbody>
+  </table>
+<hr>
+</div>
+</div>
+
+<%= link_to "New appointment", new_appointment_path %>
+</div>

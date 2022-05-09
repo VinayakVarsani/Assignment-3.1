@@ -1,0 +1,1618 @@
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2022-05-06 19:21:26 +0530
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 3 pending migrations:
+
+20220506133948_create_patients.rb
+20220506134234_create_physicians.rb
+20220506134619_create_appointments.rb
+
+
+):
+  
+activerecord (7.0.2.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.2.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.2.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.2.4) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.2.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.2.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.2.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.2.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.2.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.2.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.2.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.2.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.2.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.2.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.2.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.2.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.2.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.2.4) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.2.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.2.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePatients (20220506133948)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "patients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "pateint_id" integer, "name" varchar, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220506133948"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePhysicians (20220506134234)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "physicians" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "physician_id" integer, "name" varchar, "email" varchar, "unique_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220506134234"]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAppointments (20220506134619)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAppointments (20220506134619)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "appointment_date" date, "physician_id" integer, "patient_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_appointments_on_physician_id" ON "appointments" ("physician_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_appointments_on_patient_id" ON "appointments" ("patient_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220506134619"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-05-09 04:53:18.463791"], ["updated_at", "2022-05-09 04:53:18.463791"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-05-09 10:33:26 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (6.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.0.0/gems/railties-7.0.2.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.0.0/gems/railties-7.0.2.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.0ms | Allocations: 376)
+Completed 200 OK in 37ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 4123)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-09 10:35:22 +0530
+  
+ActionController::RoutingError (uninitialized constant PhysicianController
+Did you mean?  PhysiciansController):
+  
+Started GET "/" for 127.0.0.1 at 2022-05-09 10:35:36 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/physicians/index.html.erb:6
+  [1m[36mPhysician Load (0.3ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:6
+  Rendered physicians/index.html.erb within layouts/application (Duration: 18.8ms | Allocations: 1608)
+  Rendered layout layouts/application.html.erb (Duration: 1119.2ms | Allocations: 86093)
+Completed 200 OK in 1167ms (Views: 1128.5ms | ActiveRecord: 0.7ms | Allocations: 90706)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 10:35:41 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 44.7ms | Allocations: 5873)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 59.0ms | Allocations: 6195)
+  Rendered layout layouts/application.html.erb (Duration: 74.2ms | Allocations: 8391)
+Completed 200 OK in 126ms (Views: 80.6ms | ActiveRecord: 1.5ms | Allocations: 13701)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 10:36:08 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 10.5ms | Allocations: 1470)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 13.4ms | Allocations: 1572)
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 3768)
+Completed 200 OK in 38ms (Views: 37.4ms | ActiveRecord: 0.0ms | Allocations: 4116)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 10:45:50 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 15.0ms | Allocations: 1432)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 17.9ms | Allocations: 1755)
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | Allocations: 4228)
+Completed 200 OK in 46ms (Views: 44.4ms | ActiveRecord: 0.0ms | Allocations: 5264)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 10:55:30 +0530
+Processing by PhysiciansController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/physicians_controller.rb:15:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 3.0ms | Allocations: 1096)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 13.9ms | Allocations: 1210)
+  Rendered layout layouts/application.html.erb (Duration: 71.7ms | Allocations: 14715)
+Completed 200 OK in 136ms (Views: 96.1ms | ActiveRecord: 0.5ms | Allocations: 19866)
+
+
+Started POST "/physicians" for 127.0.0.1 at 2022-05-09 10:55:46 +0530
+Processing by PhysiciansController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "physician"=>{"name"=>"vinayak", "email"=>"ldsnsdihfcds"}, "commit"=>"Create Physician"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mPhysician Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "physicians" WHERE "physicians"."email" = ? LIMIT ?[0m  [["email", "ldsnsdihfcds"], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mPhysician Load (1.0ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."uniq_id" = ?[0m  [["uniq_id", "9d35aa97-cafb-4e32-b1d5-63e179953ae3"]]
+  ↳ app/models/physician.rb:12:in `add_unique_id'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 1.4ms | Allocations: 6326)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: physicians.uniq_id):
+  
+app/models/physician.rb:12:in `add_unique_id'
+app/controllers/physicians_controller.rb:27:in `block in create'
+app/controllers/physicians_controller.rb:26:in `create'
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 10:58:18 +0530
+Processing by PhysiciansController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/physicians_controller.rb:15:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 3.1ms | Allocations: 1104)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 1218)
+  Rendered layout layouts/application.html.erb (Duration: 84.0ms | Allocations: 14799)
+Completed 200 OK in 153ms (Views: 99.3ms | ActiveRecord: 1.6ms | Allocations: 20424)
+
+
+Started POST "/physicians" for 127.0.0.1 at 2022-05-09 10:58:24 +0530
+Processing by PhysiciansController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "physician"=>{"name"=>"vinayak", "email"=>"ldsnsdihfcds"}, "commit"=>"Create Physician"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mPhysician Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "physicians" WHERE "physicians"."email" = ? LIMIT ?[0m  [["email", "ldsnsdihfcds"], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."unique_id" = ?[0m  [["unique_id", 60]]
+  ↳ app/models/physician.rb:12:in `add_unique_id'
+  [1m[36mPhysician Create (0.3ms)[0m  [1m[32mINSERT INTO "physicians" ("physician_id", "name", "email", "unique_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["physician_id", nil], ["name", "vinayak"], ["email", "ldsnsdihfcds"], ["unique_id", 60], ["created_at", "2022-05-09 05:28:25.045732"], ["updated_at", "2022-05-09 05:28:25.045732"]]
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3001/physicians/1
+Completed 302 Found in 69ms (ActiveRecord: 4.0ms | Allocations: 5269)
+
+
+Started GET "/physicians/1" for 127.0.0.1 at 2022-05-09 10:58:25 +0530
+Processing by PhysiciansController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mPhysician Load (0.3ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/show.html.erb within layouts/application
+  Rendered physicians/_physician.html.erb (Duration: 2.5ms | Allocations: 260)
+  Rendered physicians/show.html.erb within layouts/application (Duration: 13.3ms | Allocations: 1479)
+  Rendered layout layouts/application.html.erb (Duration: 29.6ms | Allocations: 3666)
+Completed 200 OK in 47ms (Views: 38.4ms | ActiveRecord: 0.3ms | Allocations: 5200)
+
+
+Started GET "/physicians/1" for 127.0.0.1 at 2022-05-09 11:02:16 +0530
+Processing by PhysiciansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/show.html.erb within layouts/application
+  Rendered physicians/_physician.html.erb (Duration: 5.4ms | Allocations: 257)
+  Rendered physicians/show.html.erb within layouts/application (Duration: 8.4ms | Allocations: 1200)
+  Rendered layout layouts/application.html.erb (Duration: 110.9ms | Allocations: 14954)
+Completed 200 OK in 183ms (Views: 138.8ms | ActiveRecord: 7.1ms | Allocations: 21783)
+
+
+Started GET "/appointment" for 127.0.0.1 at 2022-05-09 11:02:30 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/appointment"):
+  
+Started GET "/appointments" for 127.0.0.1 at 2022-05-09 11:02:37 +0530
+Processing by AppointmentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments"[0m
+  ↳ app/views/appointments/index.html.erb:6
+  Rendered appointments/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 1048)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 3334)
+Completed 200 OK in 66ms (Views: 40.1ms | ActiveRecord: 0.2ms | Allocations: 6467)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2022-05-09 11:02:46 +0530
+Processing by AppointmentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 23.8ms | Allocations: 2576)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 30.8ms | Allocations: 2891)
+  Rendered layout layouts/application.html.erb (Duration: 35.8ms | Allocations: 5086)
+Completed 200 OK in 75ms (Views: 47.1ms | ActiveRecord: 0.9ms | Allocations: 8639)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2022-05-09 11:03:29 +0530
+Processing by AppointmentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 5.1ms | Allocations: 1168)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 16.0ms | Allocations: 1491)
+  Rendered layout layouts/application.html.erb (Duration: 33.6ms | Allocations: 3964)
+Completed 200 OK in 48ms (Views: 46.3ms | ActiveRecord: 0.0ms | Allocations: 4997)
+
+
+Started POST "/appointments" for 127.0.0.1 at 2022-05-09 11:03:39 +0530
+Processing by AppointmentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "appointment"=>{"appointment_date"=>"2022-05-10"}, "commit"=>"Create Appointment"}
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 14.0ms | Allocations: 1569)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 14.6ms | Allocations: 1671)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 3859)
+Completed 422 Unprocessable Entity in 127ms (Views: 36.7ms | ActiveRecord: 0.0ms | Allocations: 14528)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2022-05-09 11:03:58 +0530
+Processing by AppointmentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 2.5ms | Allocations: 778)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 880)
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 3075)
+Completed 200 OK in 30ms (Views: 29.5ms | ActiveRecord: 0.0ms | Allocations: 3411)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" ORDER BY "physicians"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 11:09:26 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 13.4ms | Allocations: 1441)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 17.3ms | Allocations: 1763)
+  Rendered layout layouts/application.html.erb (Duration: 34.2ms | Allocations: 4036)
+Completed 200 OK in 51ms (Views: 49.7ms | ActiveRecord: 0.0ms | Allocations: 4902)
+
+
+Started POST "/physicians" for 127.0.0.1 at 2022-05-09 11:10:31 +0530
+Processing by PhysiciansController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "physician"=>{"name"=>"vinayak2", "email"=>"sdbkjdhfodf"}, "commit"=>"Create Physician"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mPhysician Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "physicians" WHERE "physicians"."email" = ? LIMIT ?[0m  [["email", "sdbkjdhfodf"], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."unique_id" = ?[0m  [["unique_id", 6]]
+  ↳ app/models/physician.rb:12:in `add_unique_id'
+  [1m[36mPhysician Create (1.3ms)[0m  [1m[32mINSERT INTO "physicians" ("physician_id", "name", "email", "unique_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["physician_id", nil], ["name", "vinayak2"], ["email", "sdbkjdhfodf"], ["unique_id", 6], ["created_at", "2022-05-09 05:40:31.943744"], ["updated_at", "2022-05-09 05:40:31.943744"]]
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3001/physicians/2
+Completed 302 Found in 54ms (ActiveRecord: 6.2ms | Allocations: 4501)
+
+
+Started GET "/physicians/2" for 127.0.0.1 at 2022-05-09 11:10:31 +0530
+Processing by PhysiciansController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mPhysician Load (0.4ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/show.html.erb within layouts/application
+  Rendered physicians/_physician.html.erb (Duration: 5.3ms | Allocations: 240)
+  Rendered physicians/show.html.erb within layouts/application (Duration: 9.7ms | Allocations: 1171)
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 3358)
+Completed 200 OK in 41ms (Views: 31.4ms | ActiveRecord: 0.4ms | Allocations: 4283)
+
+
+Started GET "/physicians/2" for 127.0.0.1 at 2022-05-09 11:12:44 +0530
+Processing by PhysiciansController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  [1m[36mPhysician Load (15.0ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/show.html.erb within layouts/application
+  Rendered physicians/_physician.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered physicians/show.html.erb within layouts/application (Duration: 4.8ms | Allocations: 708)
+  Rendered layout layouts/application.html.erb (Duration: 64.6ms | Allocations: 14280)
+Completed 200 OK in 155ms (Views: 76.2ms | ActiveRecord: 17.2ms | Allocations: 20888)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 11:13:04 +0530
+Processing by PhysiciansController#new as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/physicians_controller.rb:15:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 13.1ms | Allocations: 1086)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 17.2ms | Allocations: 1200)
+  Rendered layout layouts/application.html.erb (Duration: 104.6ms | Allocations: 14687)
+Completed 200 OK in 182ms (Views: 125.6ms | ActiveRecord: 6.7ms | Allocations: 20233)
+
+
+Started POST "/physicians" for 127.0.0.1 at 2022-05-09 11:13:12 +0530
+Processing by PhysiciansController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "physician"=>{"name"=>"cvhf", "email"=>"retreg"}, "commit"=>"Create Physician"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mPhysician Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "physicians" WHERE "physicians"."email" = ? LIMIT ?[0m  [["email", "retreg"], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."unique_id" = ?[0m  [["unique_id", nil]]
+  ↳ app/models/physician.rb:12:in `add_unique_id'
+  [1m[36mPhysician Create (0.3ms)[0m  [1m[32mINSERT INTO "physicians" ("physician_id", "name", "email", "unique_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["physician_id", nil], ["name", "cvhf"], ["email", "retreg"], ["unique_id", 0], ["created_at", "2022-05-09 05:43:12.371056"], ["updated_at", "2022-05-09 05:43:12.371056"]]
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3001/physicians/3
+Completed 302 Found in 61ms (ActiveRecord: 4.1ms | Allocations: 4111)
+
+
+Started GET "/physicians/3" for 127.0.0.1 at 2022-05-09 11:13:12 +0530
+Processing by PhysiciansController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mPhysician Load (0.3ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/show.html.erb within layouts/application
+  Rendered physicians/_physician.html.erb (Duration: 0.2ms | Allocations: 35)
+  Rendered physicians/show.html.erb within layouts/application (Duration: 3.3ms | Allocations: 692)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 2879)
+Completed 200 OK in 33ms (Views: 21.2ms | ActiveRecord: 0.3ms | Allocations: 4232)
+
+
+Started POST "/physicians" for 127.0.0.1 at 2022-05-09 11:14:16 +0530
+Processing by PhysiciansController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "physician"=>{"name"=>"cvhf", "email"=>"retreg@.ccom"}, "commit"=>"Create Physician"}
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/physicians_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mPhysician Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "physicians" WHERE "physicians"."email" = ? LIMIT ?[0m  [["email", "retreg@.ccom"], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."unique_id" = ?[0m  [["unique_id", nil]]
+  ↳ app/models/physician.rb:12:in `add_unique_id'
+  [1m[36mPhysician Create (0.3ms)[0m  [1m[32mINSERT INTO "physicians" ("physician_id", "name", "email", "unique_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["physician_id", nil], ["name", "cvhf"], ["email", "retreg@.ccom"], ["unique_id", 0], ["created_at", "2022-05-09 05:44:16.351903"], ["updated_at", "2022-05-09 05:44:16.351903"]]
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3001/physicians/4
+Completed 302 Found in 70ms (ActiveRecord: 7.0ms | Allocations: 8880)
+
+
+Started GET "/physicians/4" for 127.0.0.1 at 2022-05-09 11:14:16 +0530
+Processing by PhysiciansController#show as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/show.html.erb within layouts/application
+  Rendered physicians/_physician.html.erb (Duration: 0.1ms | Allocations: 41)
+  Rendered physicians/show.html.erb within layouts/application (Duration: 11.2ms | Allocations: 726)
+  Rendered layout layouts/application.html.erb (Duration: 69.2ms | Allocations: 14232)
+Completed 200 OK in 80ms (Views: 73.9ms | ActiveRecord: 0.2ms | Allocations: 16009)
+
+
+Started POST "/physicians" for 127.0.0.1 at 2022-05-09 11:14:41 +0530
+Processing by PhysiciansController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "physician"=>{"name"=>"cvhf", "email"=>"retreg@.ccomsdsd"}, "commit"=>"Create Physician"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/physicians_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mPhysician Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "physicians" WHERE "physicians"."email" = ? LIMIT ?[0m  [["email", "retreg@.ccomsdsd"], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."unique_id" = ?[0m  [["unique_id", 75]]
+  ↳ app/models/physician.rb:12:in `add_unique_id'
+  [1m[36mPhysician Create (0.3ms)[0m  [1m[32mINSERT INTO "physicians" ("physician_id", "name", "email", "unique_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["physician_id", nil], ["name", "cvhf"], ["email", "retreg@.ccomsdsd"], ["unique_id", 75], ["created_at", "2022-05-09 05:44:42.223942"], ["updated_at", "2022-05-09 05:44:42.223942"]]
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3001/physicians/5
+Completed 302 Found in 89ms (ActiveRecord: 5.4ms | Allocations: 8956)
+
+
+Started GET "/physicians/5" for 127.0.0.1 at 2022-05-09 11:14:42 +0530
+Processing by PhysiciansController#show as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/show.html.erb within layouts/application
+  Rendered physicians/_physician.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered physicians/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 729)
+  Rendered layout layouts/application.html.erb (Duration: 61.9ms | Allocations: 14301)
+Completed 200 OK in 72ms (Views: 67.2ms | ActiveRecord: 0.2ms | Allocations: 16081)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePatients (20220506133948)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "patients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220506133948"]]
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePhysicians (20220506134234)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "physicians" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "unique_id" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220506134234"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAppointments (20220506134619)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "appointment_date" date, "physician_id" integer, "patient_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_appointments_on_physician_id" ON "appointments" ("physician_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_appointments_on_patient_id" ON "appointments" ("patient_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220506134619"]]
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-05-09 05:47:42.307468"], ["updated_at", "2022-05-09 05:47:42.307468"]]
+  [1m[36mTRANSACTION (9.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/physicians/5" for 127.0.0.1 at 2022-05-09 11:17:47 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhysiciansController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+Completed 404 Not Found in 27ms (ActiveRecord: 1.0ms | Allocations: 4411)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Physician with 'id'=5):
+  
+app/controllers/physicians_controller.rb:63:in `set_physician'
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 11:18:05 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 3.0ms | Allocations: 1094)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 11.8ms | Allocations: 1208)
+  Rendered layout layouts/application.html.erb (Duration: 61.9ms | Allocations: 14789)
+Completed 200 OK in 86ms (Views: 79.3ms | ActiveRecord: 0.0ms | Allocations: 16649)
+
+
+Started POST "/physicians" for 127.0.0.1 at 2022-05-09 11:18:11 +0530
+Processing by PhysiciansController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "physician"=>{"name"=>"dsfsdef", "email"=>"sddsfjhfj"}, "commit"=>"Create Physician"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mPhysician Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "physicians" WHERE "physicians"."email" = ? LIMIT ?[0m  [["email", "sddsfjhfj"], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."unique_id" = ?[0m  [["unique_id", "273bcd35-9d4d-471c-9382-95f73aceca19"]]
+  ↳ app/models/physician.rb:12:in `add_unique_id'
+  [1m[36mPhysician Create (0.4ms)[0m  [1m[32mINSERT INTO "physicians" ("name", "email", "unique_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "dsfsdef"], ["email", "sddsfjhfj"], ["unique_id", "273bcd35-9d4d-471c-9382-95f73aceca19"], ["created_at", "2022-05-09 05:48:11.592440"], ["updated_at", "2022-05-09 05:48:11.592440"]]
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3001/physicians/1
+Completed 302 Found in 50ms (ActiveRecord: 4.6ms | Allocations: 4008)
+
+
+Started GET "/physicians/1" for 127.0.0.1 at 2022-05-09 11:18:11 +0530
+Processing by PhysiciansController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mPhysician Load (0.3ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/show.html.erb within layouts/application
+  Rendered physicians/_physician.html.erb (Duration: 34.2ms | Allocations: 3372)
+  Rendered physicians/show.html.erb within layouts/application (Duration: 36.5ms | Allocations: 3711)
+  Rendered layout layouts/application.html.erb (Duration: 39.0ms | Allocations: 3789)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.3ms | Allocations: 4548)
+
+
+  
+ActionView::Template::Error (undefined method `physician_id' for #<Physician id: 1, name: "dsfsdef", email: "sddsfjhfj", unique_id: "273bcd35-9d4d-471c-9382-95f73aceca19", created_at: "2022-05-09 05:48:11.592440000 +0000", updated_at: "2022-05-09 05:48:11.592440000 +0000">):
+    1: <div id="<%= dom_id physician %>">
+    2:   <p>
+    3:     <strong>Physician:</strong>
+    4:     <%= physician.physician_id %>
+    5:   </p>
+    6: 
+    7:   <p>
+  
+app/views/physicians/_physician.html.erb:4
+app/views/physicians/show.html.erb:3
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 11:18:56 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 8.0ms | Allocations: 1034)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 11.2ms | Allocations: 1136)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 3345)
+Completed 200 OK in 35ms (Views: 34.3ms | ActiveRecord: 0.0ms | Allocations: 3680)
+
+
+Started POST "/physicians" for 127.0.0.1 at 2022-05-09 11:19:05 +0530
+Processing by PhysiciansController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "physician"=>{"name"=>"vinayak", "email"=>"ldsnsdihfcds"}, "commit"=>"Create Physician"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mPhysician Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "physicians" WHERE "physicians"."email" = ? LIMIT ?[0m  [["email", "ldsnsdihfcds"], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mPhysician Load (0.1ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."unique_id" = ?[0m  [["unique_id", "e426ee5e-bed7-4460-910d-64fbd880ab28"]]
+  ↳ app/models/physician.rb:12:in `add_unique_id'
+  [1m[36mPhysician Create (0.3ms)[0m  [1m[32mINSERT INTO "physicians" ("name", "email", "unique_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "vinayak"], ["email", "ldsnsdihfcds"], ["unique_id", "e426ee5e-bed7-4460-910d-64fbd880ab28"], ["created_at", "2022-05-09 05:49:05.384682"], ["updated_at", "2022-05-09 05:49:05.384682"]]
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3001/physicians/2
+Completed 302 Found in 62ms (ActiveRecord: 5.8ms | Allocations: 3587)
+
+
+Started GET "/physicians/2" for 127.0.0.1 at 2022-05-09 11:19:05 +0530
+Processing by PhysiciansController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mPhysician Load (0.1ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/show.html.erb within layouts/application
+  Rendered physicians/_physician.html.erb (Duration: 57.1ms | Allocations: 3274)
+  Rendered physicians/show.html.erb within layouts/application (Duration: 60.3ms | Allocations: 3557)
+  Rendered layout layouts/application.html.erb (Duration: 63.7ms | Allocations: 3635)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 0.1ms | Allocations: 4380)
+
+
+  
+ActionView::Template::Error (undefined method `physician_id' for #<Physician id: 2, name: "vinayak", email: "ldsnsdihfcds", unique_id: "e426ee5e-bed7-4460-910d-64fbd880ab28", created_at: "2022-05-09 05:49:05.384682000 +0000", updated_at: "2022-05-09 05:49:05.384682000 +0000">):
+    1: <div id="<%= dom_id physician %>">
+    2:   <p>
+    3:     <strong>Physician:</strong>
+    4:     <%= physician.physician_id %>
+    5:   </p>
+    6: 
+    7:   <p>
+  
+app/views/physicians/_physician.html.erb:4
+app/views/physicians/show.html.erb:3
+Started GET "/appointments" for 127.0.0.1 at 2022-05-09 11:19:15 +0530
+Processing by AppointmentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments"[0m
+  ↳ app/views/appointments/index.html.erb:6
+  Rendered appointments/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 1062)
+  Rendered layout layouts/application.html.erb (Duration: 31.2ms | Allocations: 3362)
+Completed 200 OK in 58ms (Views: 43.4ms | ActiveRecord: 0.2ms | Allocations: 6406)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 11:24:40 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 15.0ms | Allocations: 1422)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 18.2ms | Allocations: 1745)
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | Allocations: 4218)
+Completed 200 OK in 54ms (Views: 51.1ms | Allocations: 5249)
+
+
+Started POST "/physicians" for 127.0.0.1 at 2022-05-09 11:24:45 +0530
+Processing by PhysiciansController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "physician"=>{"name"=>"vinayak", "email"=>"sdbkjdhfodf"}, "commit"=>"Create Physician"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mPhysician Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "physicians" WHERE "physicians"."email" = ? LIMIT ?[0m  [["email", "sdbkjdhfodf"], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."unique_id" = ?[0m  [["unique_id", "8be6c701-3dcf-449c-95b6-5d110ee2df84"]]
+  ↳ app/models/physician.rb:12:in `add_unique_id'
+  [1m[36mPhysician Create (0.3ms)[0m  [1m[32mINSERT INTO "physicians" ("name", "email", "unique_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "vinayak"], ["email", "sdbkjdhfodf"], ["unique_id", "8be6c701-3dcf-449c-95b6-5d110ee2df84"], ["created_at", "2022-05-09 05:54:45.929183"], ["updated_at", "2022-05-09 05:54:45.929183"]]
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/physicians_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3001/physicians/3
+Completed 302 Found in 60ms (ActiveRecord: 4.8ms | Allocations: 4063)
+
+
+Started GET "/physicians/3" for 127.0.0.1 at 2022-05-09 11:24:45 +0530
+Processing by PhysiciansController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/show.html.erb within layouts/application
+  Rendered physicians/_physician.html.erb (Duration: 6.3ms | Allocations: 224)
+  Rendered physicians/show.html.erb within layouts/application (Duration: 9.4ms | Allocations: 1145)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 3332)
+Completed 200 OK in 45ms (Views: 39.7ms | ActiveRecord: 0.2ms | Allocations: 4256)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-09 18:14:53 +0530
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:6
+  Rendered physicians/_physician.html.erb (Duration: 6.0ms | Allocations: 264)
+  Rendered physicians/_physician.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered physicians/_physician.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered physicians/index.html.erb within layouts/application (Duration: 76.4ms | Allocations: 7048)
+  Rendered layout layouts/application.html.erb (Duration: 333.2ms | Allocations: 40914)
+Completed 200 OK in 400ms (Views: 345.6ms | ActiveRecord: 1.1ms | Allocations: 49666)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-09 18:17:30 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.3ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:7
+  Rendered physicians/_physician.html.erb (Duration: 0.9ms | Allocations: 223)
+  Rendered physicians/_physician.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered physicians/_physician.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered physicians/index.html.erb within layouts/application (Duration: 19.7ms | Allocations: 1748)
+  Rendered layout layouts/application.html.erb (Duration: 37.8ms | Allocations: 4239)
+Completed 200 OK in 51ms (Views: 49.1ms | ActiveRecord: 0.3ms | Allocations: 5304)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-09 18:19:37 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:7
+  Rendered physicians/_physician.html.erb (Duration: 0.9ms | Allocations: 223)
+  Rendered physicians/_physician.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered physicians/_physician.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered physicians/index.html.erb within layouts/application (Duration: 19.4ms | Allocations: 1749)
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | Allocations: 4247)
+Completed 200 OK in 51ms (Views: 49.0ms | ActiveRecord: 0.2ms | Allocations: 5311)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-09 18:20:05 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:8
+  Rendered physicians/_physician.html.erb (Duration: 5.8ms | Allocations: 223)
+  Rendered physicians/_physician.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered physicians/_physician.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered physicians/index.html.erb within layouts/application (Duration: 22.4ms | Allocations: 1748)
+  Rendered layout layouts/application.html.erb (Duration: 36.3ms | Allocations: 4243)
+Completed 200 OK in 49ms (Views: 47.7ms | ActiveRecord: 0.2ms | Allocations: 5298)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-09 18:25:16 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/index.html.erb within layouts/application (Duration: 184.6ms | Allocations: 9018)
+  Rendered layout layouts/application.html.erb (Duration: 188.2ms | Allocations: 9097)
+Completed 500 Internal Server Error in 204ms (ActiveRecord: 0.2ms | Allocations: 10132)
+
+
+  
+ActionView::Template::Error (undefined method `registration_number' for #<Physician id: 1, name: "dsfsdef", email: "sddsfjhfj", unique_id: "273bcd35-9d4d-471c-9382-95f73aceca19", created_at: "2022-05-09 05:48:11.592440000 +0000", updated_at: "2022-05-09 05:48:11.592440000 +0000">):
+    22:           <%=physician.email%>
+    23:         </td>
+    24:         <td>
+    25:           <%=physician.registration_number%>
+    26:         </td>
+    27:         <td>
+    28:           <%= link_to "Info" , physician %>
+  
+app/views/physicians/index.html.erb:25
+app/views/physicians/index.html.erb:16
+Started GET "/" for 127.0.0.1 at 2022-05-09 18:25:39 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/index.html.erb within layouts/application (Duration: 101.7ms | Allocations: 4481)
+  Rendered layout layouts/application.html.erb (Duration: 109.4ms | Allocations: 4560)
+Completed 500 Internal Server Error in 121ms (ActiveRecord: 0.2ms | Allocations: 5580)
+
+
+  
+ActionView::Template::Error (undefined method `unique_number' for #<Physician id: 1, name: "dsfsdef", email: "sddsfjhfj", unique_id: "273bcd35-9d4d-471c-9382-95f73aceca19", created_at: "2022-05-09 05:48:11.592440000 +0000", updated_at: "2022-05-09 05:48:11.592440000 +0000">
+Did you mean?  unique_id):
+    22:           <%=physician.email%>
+    23:         </td>
+    24:         <td>
+    25:           <%=physician.unique_number%>
+    26:         </td>
+    27:         <td>
+    28:           <%= link_to "Info" , physician %>
+  
+app/views/physicians/index.html.erb:25
+app/views/physicians/index.html.erb:16
+Started GET "/" for 127.0.0.1 at 2022-05-09 18:26:02 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/_physician.html.erb (Duration: 0.9ms | Allocations: 219)
+  Rendered physicians/_physician.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered physicians/_physician.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered physicians/index.html.erb within layouts/application (Duration: 24.9ms | Allocations: 2031)
+  Rendered layout layouts/application.html.erb (Duration: 41.1ms | Allocations: 4541)
+Completed 200 OK in 54ms (Views: 52.1ms | ActiveRecord: 0.2ms | Allocations: 5596)
+
+
+Started GET "/physicians/1" for 127.0.0.1 at 2022-05-09 18:26:17 +0530
+Processing by PhysiciansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhysician Load (0.3ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/show.html.erb within layouts/application
+  Rendered physicians/_physician.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered physicians/show.html.erb within layouts/application (Duration: 8.5ms | Allocations: 867)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 3054)
+Completed 200 OK in 90ms (Views: 24.2ms | ActiveRecord: 0.3ms | Allocations: 8999)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-09 18:26:47 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  Rendered physicians/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1314)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 1398)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 2431)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="container">
+<p style="color: green"><%= notice %></p>
+
+<h1 class="my-5">Physicians</h1>
+<hr>
+<table class=".d-flex table-striped table-bordered w-100 table-sm px-5 my-5 ">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">E-Mail</th>
+      <th scope="col">unique_id</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @physicians.each do |physician| %>
+      <tr>
+        <td>
+          <%=physician.name%>
+        </td>
+        <td>
+          <%=physician.email%>
+        </td>
+        <td>
+          <%=physician.unique_id%>
+        </td>
+        <td>
+          <%= link_to "Info" , physician %>
+        </td>
+      </tr>
+      <%end%>
+  </tbody>
+  </table>
+<hr>
+    <p>
+      <%= link_to "Show this physician", physician %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New physician", new_physician_path %>
+</div>
+
+):
+1:    <div class="container">
+2:    <p style="color: green"><%= notice %></p>
+3:    
+4:    <h1 class="my-5">Physicians</h1>
+5:    <hr>
+6:    <table class=".d-flex table-striped table-bordered w-100 table-sm px-5 my-5 ">
+7:      <thead>
+8:        <tr>
+9:          <th scope="col">Name</th>
+10:          <th scope="col">E-Mail</th>
+11:          <th scope="col">unique_id</th>
+12:          <th scope="col">Action</th>
+13:        </tr>
+14:      </thead>
+15:      <tbody>
+16:        <% @physicians.each do |physician| %>
+17:          <tr>
+18:            <td>
+19:              <%=physician.name%>
+20:            </td>
+21:            <td>
+22:              <%=physician.email%>
+23:            </td>
+24:            <td>
+25:              <%=physician.unique_id%>
+26:            </td>
+27:            <td>
+28:              <%= link_to "Info" , physician %>
+29:            </td>
+30:          </tr>
+31:          <%end%>
+32:      </tbody>
+33:      </table>
+34:    <hr>
+35:        <p>
+36:          <%= link_to "Show this physician", physician %>
+37:        </p>
+38:      <% end %>
+39:    </div>
+40:    
+41:    <%= link_to "New physician", new_physician_path %>
+42:    </div>
+  
+app/views/physicians/index.html.erb:45: syntax error, unexpected `end', expecting end-of-input
+app/views/physicians/index.html.erb:45: syntax error, unexpected `end', expecting end-of-input
+app/views/physicians/index.html.erb:45: syntax error, unexpected `end', expecting end-of-input
+app/views/physicians/index.html.erb:45: syntax error, unexpected `end', expecting end-of-input
+app/views/physicians/index.html.erb:45: syntax error, unexpected `end', expecting end-of-input
+app/views/physicians/index.html.erb:45: syntax error, unexpected `end', expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2022-05-09 18:27:22 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  Rendered physicians/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1306)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 1387)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 2417)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="container">
+<p style="color: green"><%= notice %></p>
+
+<h1 class="my-5">Physicians</h1>
+<hr>
+<table class=".d-flex table-striped table-bordered w-100 table-sm px-5 my-5 ">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">E-Mail</th>
+      <th scope="col">unique_id</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @physicians.each do |physician| %>
+      <tr>
+        <td>
+          <%=physician.name%>
+        </td>
+        <td>
+          <%=physician.email%>
+        </td>
+        <td>
+          <%=physician.unique_id%>
+        </td>
+        <td>
+          <%= link_to "Info" , physician %>
+        </td>
+      </tr>
+      <%end%>
+  </tbody>
+  </table>
+<hr>
+
+
+    <p>
+      <%= link_to "Show this physician", physician %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New physician", new_physician_path %>
+</div>
+
+):
+1:    <div class="container">
+2:    <p style="color: green"><%= notice %></p>
+3:    
+4:    <h1 class="my-5">Physicians</h1>
+5:    <hr>
+6:    <table class=".d-flex table-striped table-bordered w-100 table-sm px-5 my-5 ">
+7:      <thead>
+8:        <tr>
+9:          <th scope="col">Name</th>
+10:          <th scope="col">E-Mail</th>
+11:          <th scope="col">unique_id</th>
+12:          <th scope="col">Action</th>
+13:        </tr>
+14:      </thead>
+15:      <tbody>
+16:        <% @physicians.each do |physician| %>
+17:          <tr>
+18:            <td>
+19:              <%=physician.name%>
+20:            </td>
+21:            <td>
+22:              <%=physician.email%>
+23:            </td>
+24:            <td>
+25:              <%=physician.unique_id%>
+26:            </td>
+27:            <td>
+28:              <%= link_to "Info" , physician %>
+29:            </td>
+30:          </tr>
+31:          <%end%>
+32:      </tbody>
+33:      </table>
+34:    <hr>
+35:    
+36:    
+37:        <p>
+38:          <%= link_to "Show this physician", physician %>
+39:        </p>
+40:      <% end %>
+41:    </div>
+42:    
+43:    <%= link_to "New physician", new_physician_path %>
+44:    </div>
+  
+app/views/physicians/index.html.erb:47: syntax error, unexpected `end', expecting end-of-input
+app/views/physicians/index.html.erb:47: syntax error, unexpected `end', expecting end-of-input
+app/views/physicians/index.html.erb:47: syntax error, unexpected `end', expecting end-of-input
+app/views/physicians/index.html.erb:47: syntax error, unexpected `end', expecting end-of-input
+app/views/physicians/index.html.erb:47: syntax error, unexpected `end', expecting end-of-input
+app/views/physicians/index.html.erb:47: syntax error, unexpected `end', expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2022-05-09 18:27:45 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 1280)
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 3791)
+Completed 200 OK in 49ms (Views: 44.0ms | ActiveRecord: 0.2ms | Allocations: 4846)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-09 18:28:24 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.3ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 1275)
+  Rendered layout layouts/application.html.erb (Duration: 40.1ms | Allocations: 3771)
+Completed 200 OK in 52ms (Views: 50.3ms | ActiveRecord: 0.3ms | Allocations: 4826)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 18:29:06 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 70.2ms | Allocations: 7856)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 71.7ms | Allocations: 8171)
+  Rendered layout layouts/application.html.erb (Duration: 86.7ms | Allocations: 10366)
+Completed 200 OK in 97ms (Views: 89.8ms | ActiveRecord: 0.0ms | Allocations: 10783)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-09 18:36:21 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/physicians/index.html.erb:16
+  [1m[36mPhysician Load (0.3ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/index.html.erb within layouts/application (Duration: 21.5ms | Allocations: 1877)
+  Rendered layout layouts/application.html.erb (Duration: 42.5ms | Allocations: 4373)
+Completed 200 OK in 59ms (Views: 57.8ms | ActiveRecord: 0.8ms | Allocations: 5425)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-09 18:36:41 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (8.3ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/index.html.erb within layouts/application (Duration: 12.8ms | Allocations: 1292)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 3788)
+Completed 200 OK in 54ms (Views: 39.9ms | ActiveRecord: 8.3ms | Allocations: 4843)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-09 18:37:23 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/index.html.erb within layouts/application (Duration: 20.5ms | Allocations: 1283)
+  Rendered layout layouts/application.html.erb (Duration: 41.4ms | Allocations: 3779)
+Completed 200 OK in 66ms (Views: 63.8ms | ActiveRecord: 0.2ms | Allocations: 4834)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-09 18:37:38 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/index.html.erb within layouts/application (Duration: 14.9ms | Allocations: 1290)
+  Rendered layout layouts/application.html.erb (Duration: 33.3ms | Allocations: 3786)
+Completed 200 OK in 48ms (Views: 46.4ms | ActiveRecord: 0.2ms | Allocations: 4841)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-09 18:37:52 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 1290)
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 3786)
+Completed 200 OK in 45ms (Views: 43.0ms | ActiveRecord: 0.2ms | Allocations: 4841)
+
+
+Started GET "/physicians/1" for 127.0.0.1 at 2022-05-09 18:38:04 +0530
+Processing by PhysiciansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhysician Load (0.3ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/show.html.erb within layouts/application
+  Rendered physicians/_physician.html.erb (Duration: 6.0ms | Allocations: 223)
+  Rendered physicians/show.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1129)
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 3316)
+Completed 200 OK in 42ms (Views: 35.3ms | ActiveRecord: 0.3ms | Allocations: 4196)
+
+
+Started GET "/physicians/1" for 127.0.0.1 at 2022-05-09 18:41:15 +0530
+Processing by PhysiciansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/show.html.erb within layouts/application
+  Rendered physicians/_physician.html.erb (Duration: 6.4ms | Allocations: 222)
+  Rendered physicians/show.html.erb within layouts/application (Duration: 12.6ms | Allocations: 1208)
+  Rendered layout layouts/application.html.erb (Duration: 34.2ms | Allocations: 3677)
+Completed 200 OK in 47ms (Views: 43.8ms | ActiveRecord: 0.2ms | Allocations: 5175)
+
+
+Started GET "/physicians/1" for 127.0.0.1 at 2022-05-09 18:42:28 +0530
+Processing by PhysiciansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/show.html.erb within layouts/application
+  Rendered physicians/_physician.html.erb (Duration: 6.0ms | Allocations: 222)
+  Rendered physicians/show.html.erb within layouts/application (Duration: 9.7ms | Allocations: 1903)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 1982)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.2ms | Allocations: 3449)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"physicians", :id=>nil}, missing required keys: [:id]):
+     7: <%= render @physician %>
+     8: 
+     9: <button class="btn-warning">
+    10:   <%= link_to "Edit", edit_physician_path(@industry) %>
+    11:   </button>
+    12:   <button class="btn my-5">
+    13:     <%= link_to "Back", physicians_path %>
+  
+app/views/physicians/show.html.erb:10
+Started GET "/physicians/1" for 127.0.0.1 at 2022-05-09 18:42:53 +0530
+Processing by PhysiciansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/show.html.erb within layouts/application
+  Rendered physicians/_physician.html.erb (Duration: 6.1ms | Allocations: 222)
+  Rendered physicians/show.html.erb within layouts/application (Duration: 10.2ms | Allocations: 926)
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 3428)
+Completed 200 OK in 56ms (Views: 43.0ms | ActiveRecord: 0.2ms | Allocations: 4940)
+
+
+Started GET "/physicians/1/edit" for 127.0.0.1 at 2022-05-09 18:43:23 +0530
+Processing by PhysiciansController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/edit.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 17.6ms | Allocations: 1543)
+  Rendered physicians/edit.html.erb within layouts/application (Duration: 21.9ms | Allocations: 1908)
+  Rendered layout layouts/application.html.erb (Duration: 41.0ms | Allocations: 4095)
+Completed 200 OK in 56ms (Views: 44.6ms | ActiveRecord: 0.2ms | Allocations: 4929)
+
+
+Started GET "/physicians/1/edit" for 127.0.0.1 at 2022-05-09 18:46:18 +0530
+Processing by PhysiciansController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhysician Load (0.3ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/edit.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 19.1ms | Allocations: 1544)
+  Rendered physicians/edit.html.erb within layouts/application (Duration: 26.2ms | Allocations: 1940)
+  Rendered layout layouts/application.html.erb (Duration: 40.7ms | Allocations: 4410)
+Completed 200 OK in 79ms (Views: 61.2ms | ActiveRecord: 0.3ms | Allocations: 5884)
+
+
+Started PATCH "/physicians/1" for 127.0.0.1 at 2022-05-09 18:46:26 +0530
+Processing by PhysiciansController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "physician"=>{"name"=>"dsfsdef", "email"=>"sddsfjhfj"}, "commit"=>"Update Physician", "id"=>"1"}
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/physicians_controller.rb:40:in `block in update'
+  [1m[36mPhysician Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "physicians" WHERE "physicians"."email" = ? AND "physicians"."id" != ? LIMIT ?[0m  [["email", "sddsfjhfj"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/physicians_controller.rb:40:in `block in update'
+Redirected to http://127.0.0.1:3002/physicians/1
+Completed 302 Found in 32ms (ActiveRecord: 0.5ms | Allocations: 3783)
+
+
+Started GET "/physicians/1" for 127.0.0.1 at 2022-05-09 18:46:26 +0530
+Processing by PhysiciansController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mPhysician Load (0.1ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/show.html.erb within layouts/application
+  Rendered physicians/_physician.html.erb (Duration: 7.2ms | Allocations: 219)
+  Rendered physicians/show.html.erb within layouts/application (Duration: 10.5ms | Allocations: 985)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 3185)
+Completed 200 OK in 33ms (Views: 26.1ms | ActiveRecord: 0.1ms | Allocations: 4092)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-09 18:46:48 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/index.html.erb within layouts/application (Duration: 13.4ms | Allocations: 1263)
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 3471)
+Completed 200 OK in 45ms (Views: 37.6ms | ActiveRecord: 0.2ms | Allocations: 3883)
+
+
+Started GET "/patient" for 127.0.0.1 at 2022-05-09 18:47:16 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/patient"):
+  
+Started GET "/patients" for 127.0.0.1 at 2022-05-09 18:47:21 +0530
+Processing by PatientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (4.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/patients/index.html.erb:6
+  Rendered patients/index.html.erb within layouts/application (Duration: 15.3ms | Allocations: 1091)
+  Rendered layout layouts/application.html.erb (Duration: 34.4ms | Allocations: 3377)
+Completed 200 OK in 63ms (Views: 41.1ms | ActiveRecord: 4.4ms | Allocations: 6409)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 18:49:41 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 10.0ms | Allocations: 1056)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 16.1ms | Allocations: 1311)
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 3506)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.0ms | Allocations: 3899)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 18:53:56 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 6.0ms | Allocations: 1447)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 19.6ms | Allocations: 1770)
+  Rendered layout layouts/application.html.erb (Duration: 35.4ms | Allocations: 4248)
+Completed 200 OK in 49ms (Views: 47.6ms | Allocations: 5278)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 18:53:59 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 11.2ms | Allocations: 1071)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1173)
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 3368)
+Completed 200 OK in 32ms (Views: 30.8ms | Allocations: 3701)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 18:55:11 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 11.2ms | Allocations: 1459)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 21.8ms | Allocations: 1782)
+  Rendered layout layouts/application.html.erb (Duration: 33.7ms | Allocations: 4261)
+Completed 200 OK in 48ms (Views: 46.2ms | Allocations: 5291)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 18:57:32 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 7.5ms | Allocations: 1457)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 17.5ms | Allocations: 1780)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 4258)
+Completed 200 OK in 48ms (Views: 46.3ms | Allocations: 5289)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 18:57:34 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 11.2ms | Allocations: 1059)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 15.6ms | Allocations: 1161)
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 3356)
+Completed 200 OK in 34ms (Views: 32.6ms | Allocations: 3689)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 18:57:35 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 18.4ms | Allocations: 1039)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 23.2ms | Allocations: 1141)
+  Rendered layout layouts/application.html.erb (Duration: 44.1ms | Allocations: 3336)
+Completed 200 OK in 51ms (Views: 50.1ms | Allocations: 3668)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 18:58:55 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 8.3ms | Allocations: 1474)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 17.7ms | Allocations: 1797)
+  Rendered layout layouts/application.html.erb (Duration: 34.9ms | Allocations: 4275)
+Completed 200 OK in 52ms (Views: 50.2ms | Allocations: 5305)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 19:00:19 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 9.4ms | Allocations: 1479)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 16.5ms | Allocations: 1804)
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | Allocations: 4282)
+Completed 200 OK in 48ms (Views: 45.8ms | Allocations: 5313)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 19:00:22 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 3.0ms | Allocations: 1053)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 1155)
+  Rendered layout layouts/application.html.erb (Duration: 47.6ms | Allocations: 3356)
+Completed 200 OK in 52ms (Views: 51.2ms | Allocations: 3690)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 19:00:31 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 19.2ms | Allocations: 1471)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 24.0ms | Allocations: 1800)
+  Rendered layout layouts/application.html.erb (Duration: 43.8ms | Allocations: 4291)
+Completed 200 OK in 57ms (Views: 55.0ms | Allocations: 5321)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 19:00:43 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 12.0ms | Allocations: 1485)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 17.6ms | Allocations: 1809)
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 4292)
+Completed 200 OK in 50ms (Views: 48.7ms | Allocations: 5324)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 19:01:02 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 8.2ms | Allocations: 1479)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 17.0ms | Allocations: 1803)
+  Rendered layout layouts/application.html.erb (Duration: 34.1ms | Allocations: 4281)
+Completed 200 OK in 48ms (Views: 46.9ms | Allocations: 5312)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 19:01:20 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 11.4ms | Allocations: 1489)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 16.2ms | Allocations: 1814)
+  Rendered layout layouts/application.html.erb (Duration: 40.4ms | Allocations: 4292)
+Completed 200 OK in 59ms (Views: 53.5ms | Allocations: 5323)
+
+
+Started GET "/physicians" for 127.0.0.1 at 2022-05-09 19:01:48 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/physicians/index.html.erb:16
+  [1m[36mPhysician Load (0.3ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/index.html.erb within layouts/application (Duration: 25.3ms | Allocations: 1847)
+  Rendered layout layouts/application.html.erb (Duration: 42.9ms | Allocations: 4055)
+Completed 200 OK in 58ms (Views: 52.9ms | ActiveRecord: 6.8ms | Allocations: 4466)
+
+
+Started GET "/physicians/2" for 127.0.0.1 at 2022-05-09 19:01:52 +0530
+Processing by PhysiciansController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhysician Load (0.4ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/physicians_controller.rb:63:in `set_physician'
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/show.html.erb within layouts/application
+  Rendered physicians/_physician.html.erb (Duration: 0.9ms | Allocations: 219)
+  Rendered physicians/show.html.erb within layouts/application (Duration: 12.6ms | Allocations: 909)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 3109)
+Completed 200 OK in 45ms (Views: 33.4ms | ActiveRecord: 0.4ms | Allocations: 3982)
+
+
+Started GET "/physicians" for 127.0.0.1 at 2022-05-09 19:07:44 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/physicians/index.html.erb:16
+  [1m[36mPhysician Load (0.1ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/index.html.erb within layouts/application (Duration: 14.0ms | Allocations: 1971)
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | Allocations: 4467)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 4.5ms | Allocations: 5519)
+
+
+Started GET "/physicians" for 127.0.0.1 at 2022-05-09 19:08:06 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.1ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1390)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 3887)
+Completed 200 OK in 33ms (Views: 28.0ms | ActiveRecord: 0.1ms | Allocations: 4945)
+
+
+Started GET "/physicians" for 127.0.0.1 at 2022-05-09 19:08:14 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.1ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 1394)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 3890)
+Completed 200 OK in 36ms (Views: 34.0ms | ActiveRecord: 0.1ms | Allocations: 4945)
+
+
+Started GET "/physicians" for 127.0.0.1 at 2022-05-09 19:08:27 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.1ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/index.html.erb within layouts/application (Duration: 12.8ms | Allocations: 1401)
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 3897)
+Completed 200 OK in 40ms (Views: 38.1ms | ActiveRecord: 0.1ms | Allocations: 4952)
+
+
+Started GET "/physicians" for 127.0.0.1 at 2022-05-09 19:09:02 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.1ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 1397)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 3893)
+Completed 200 OK in 41ms (Views: 39.7ms | ActiveRecord: 0.1ms | Allocations: 4948)
+
+
+Started GET "/physicians" for 127.0.0.1 at 2022-05-09 19:09:35 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.1ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/index.html.erb within layouts/application (Duration: 18.0ms | Allocations: 1393)
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 3889)
+Completed 200 OK in 42ms (Views: 41.3ms | ActiveRecord: 0.1ms | Allocations: 4944)
+
+
+Started GET "/patients/new" for 127.0.0.1 at 2022-05-09 19:09:38 +0530
+Processing by PatientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering patients/new.html.erb within layouts/application
+  Rendered patients/_form.html.erb (Duration: 41.9ms | Allocations: 6612)
+  Rendered patients/new.html.erb within layouts/application (Duration: 51.9ms | Allocations: 6936)
+  Rendered layout layouts/application.html.erb (Duration: 57.1ms | Allocations: 9203)
+Completed 200 OK in 77ms (Views: 68.7ms | ActiveRecord: 0.6ms | Allocations: 11398)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2022-05-09 19:09:43 +0530
+Processing by AppointmentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 7.6ms | Allocations: 1510)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 12.0ms | Allocations: 1835)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 4103)
+Completed 200 OK in 63ms (Views: 29.8ms | ActiveRecord: 0.5ms | Allocations: 11095)
+
+
+Started GET "/physicians" for 127.0.0.1 at 2022-05-09 19:10:47 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.1ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1378)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 3874)
+Completed 200 OK in 29ms (Views: 27.9ms | ActiveRecord: 0.1ms | Allocations: 4930)
+
+
+Started GET "/patients/new" for 127.0.0.1 at 2022-05-09 19:10:49 +0530
+Processing by PatientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering patients/new.html.erb within layouts/application
+  Rendered patients/_form.html.erb (Duration: 10.7ms | Allocations: 1755)
+  Rendered patients/new.html.erb within layouts/application (Duration: 13.3ms | Allocations: 2078)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 4345)
+Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.0ms | Allocations: 5205)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2022-05-09 19:10:54 +0530
+Processing by AppointmentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 4.6ms | Allocations: 1203)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1526)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 3793)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.0ms | Allocations: 4651)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2022-05-09 19:11:01 +0530
+Processing by AppointmentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 1.6ms | Allocations: 839)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 941)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3136)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.0ms | Allocations: 3475)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2022-05-09 19:13:20 +0530
+Processing by AppointmentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 2.3ms | Allocations: 1203)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 1526)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 4004)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.0ms | Allocations: 5040)
+
+
+Started POST "/appointments" for 127.0.0.1 at 2022-05-09 19:13:27 +0530
+Processing by AppointmentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "appointment"=>{"appointment_date"=>"2022-05-13"}, "commit"=>"Create Appointment"}
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 3.2ms | Allocations: 1569)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1671)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 3858)
+Completed 422 Unprocessable Entity in 60ms (Views: 24.4ms | ActiveRecord: 0.0ms | Allocations: 11784)
+
+
+Started POST "/appointments" for 127.0.0.1 at 2022-05-09 19:15:15 +0530
+Processing by AppointmentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "appointment"=>{"appointment_date"=>"2022-05-13"}, "commit"=>"Create Appointment"}
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 2.9ms | Allocations: 1430)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 11.9ms | Allocations: 1532)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 3735)
+Completed 422 Unprocessable Entity in 29ms (Views: 25.1ms | ActiveRecord: 0.0ms | Allocations: 4944)
+
+
+Started GET "/appointments" for 127.0.0.1 at 2022-05-09 19:15:20 +0530
+Processing by AppointmentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments"[0m
+  ↳ app/views/appointments/index.html.erb:16
+  Rendered appointments/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1153)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 3371)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.2ms | Allocations: 3823)
+
+
+Started GET "/physicians" for 127.0.0.1 at 2022-05-09 19:15:28 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.1ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:16
+  Rendered physicians/index.html.erb within layouts/application (Duration: 13.9ms | Allocations: 1380)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 3670)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.1ms | Allocations: 4551)
+
+
+Started GET "/patients/new" for 127.0.0.1 at 2022-05-09 19:15:40 +0530
+Processing by PatientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering patients/new.html.erb within layouts/application
+  Rendered patients/_form.html.erb (Duration: 7.2ms | Allocations: 1747)
+  Rendered patients/new.html.erb within layouts/application (Duration: 13.5ms | Allocations: 2069)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 4336)
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.0ms | Allocations: 5195)
+
+
+Started GET "/physicians/new" for 127.0.0.1 at 2022-05-09 19:15:54 +0530
+Processing by PhysiciansController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/new.html.erb within layouts/application
+  Rendered physicians/_form.html.erb (Duration: 2.7ms | Allocations: 1470)
+  Rendered physicians/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 1785)
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 3980)
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.0ms | Allocations: 4373)
+
+
